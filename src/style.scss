@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&family=Titillium+Web:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 2rem;
+  background-color: gray;
+  color: black;
+}
+
+nav {
+  a {
+    margin: 0 2rem;
+    color: blue;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+  }
+  .nav-btn {
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  header {
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1.5rem;
+      background-color: burlywood;
+      transition: 1s;
+      transform: translateY(-100vh);
+
+      .nav-btn {
+        visibility: visible;
+        opacity: 1;
+        background-color: transparent;
+      }
+
+      .nav-close-btn {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+      }
+      a {
+        font-size: 1.6rem;
+      }
+    }
+    .responsive_nav {
+      transform: none;
+    }
+  }
+}
