@@ -5,6 +5,7 @@ import Biography from "../pages/Biography";
 import Music from "../pages/Music";
 import Nguba from "../pages/Nguba";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "../pages/Home";
 
 function NavbarMenu() {
   return (
@@ -16,9 +17,9 @@ function NavbarMenu() {
         expand="sm"
         collapseOnSelect
       >
-        <Navbar.Brand>
-          {/* <img src="{img}" /> */}
-          Logo
+        <Navbar.Brand as={Link} to="/" className="logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/1090/1090663.png" />
+          Madre Monte
         </Navbar.Brand>
         <Navbar.Toggle className="coloring" />
         <Navbar.Collapse>
@@ -40,6 +41,7 @@ function NavbarMenu() {
       </Navbar>
 
       <Routes>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/biography" element={<Biography />}></Route>
         <Route path="/music" element={<Music />}></Route>
         <Route path="/nguba" element={<Nguba />}></Route>
